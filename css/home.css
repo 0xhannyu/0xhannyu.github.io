@@ -1,0 +1,118 @@
+html {
+  height: 100%;
+  backdrop-filter: blur(10px) saturate(50%);
+  box-shadow: inset 0 0 100px black;
+}
+
+@font-face {
+  font-family: Estandar;
+  src: url(../resources/fonts/Estandar-Regular.ttf);
+
+  font-family: Satoshi;
+  src: url(../resources/fonts/Satoshi-Regular.ttf);
+}
+
+body {
+  background-image: src(ripplestatic.svg);
+  background-attachment: fixed;
+  background-size: auto;
+  background-color: #282828;
+  margin: 0;
+  padding: 0;
+}
+
+#pfp {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border-color: magenta;
+  border-style: solid;
+}
+
+.flex-nav {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.25em;
+  margin-bottom: 2rem;
+  padding: 7px;
+  background-color: transparent;
+  max-width: 30%;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+}
+
+.flex-nav-item {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0 5px 0;
+  border-radius: 0.25rem;
+  background-color: #383838;
+  align-items: center;
+  justify-content: center;
+  max-width: 1.7rem;
+  height: 1.7rem;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 8px 16px 0 rgba(0,0,0,0.19);
+}
+
+a:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 35px white;
+}
+
+.flex-nav-item svg {
+  height: 1.3rem;
+  width: 1.3rem;
+  position: absolute;
+}
+
+#image-containerSlide {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -9999;
+}
+
+#imageSlide {
+  transform: none;
+  position: relative;
+  max-width: 20%;
+  max-height: 35%;
+}
+
+.text-aboutme {
+  padding: 2rem;
+  font-family: Satoshi;
+  color: ghostwhite;
+  padding-left: 15%;
+  padding-right: 15%;
+  z-index: 9999;
+}
+
+.text-aboutme p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 100;
+  display: inline;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: #7777;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+}
