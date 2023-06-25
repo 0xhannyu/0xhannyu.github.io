@@ -1,4 +1,4 @@
-const words = ['Hannyu', '[REDACTED]', 'Hanu', 'SGFudQ==', '0xh'];
+const words = ['Hannyu', '[REDACTED]', 'Hanu', 'SGFudQ==', '0xh', 'हन्नू'];
 const thenameWordElement = document.getElementById('thename');
 
 setInterval(() => {
