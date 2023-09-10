@@ -131,15 +131,6 @@ a:hover {
   max-width: 100%;
 }
 
-::-webkit-scrollbar {
-  width: 7px;
-  background-color: #7777;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 20px;
-}
-
 #image-containerSlide {
   position: fixed;
   width: 100%;
@@ -153,4 +144,13 @@ a:hover {
   position: relative;
   max-width: 20%;
   max-height: 35%;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: #7777;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
 }
