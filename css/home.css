@@ -66,7 +66,7 @@ body {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 8px 16px 0 rgba(0,0,0,0.19);
 }
 
-a:hover {
+.flex-nav-item:hover {
   transform: scale(1.2);
   box-shadow: 0 0 35px white;
 }
@@ -106,6 +106,11 @@ a:hover {
   line-height: 1.5rem;
   font-weight: 100;
   display: inline;
+}
+
+.text-aboutme a {
+  color: inherit;
+  text-decoration: none;
 }
 
 ::-webkit-scrollbar {
