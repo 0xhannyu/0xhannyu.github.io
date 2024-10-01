@@ -5,11 +5,8 @@ html {
 }
 
 @font-face {
-  font-family: Estandar;
-  src: url(../resources/fonts/Estandar-Regular.ttf);
-
   font-family: Satoshi;
-  src: url(../resources/fonts/Satoshi-Regular.ttf);
+  src: url(Satoshi-Regular.ttf);
 }
 
 body {
@@ -96,9 +93,16 @@ body {
   padding: 2rem;
   font-family: Satoshi;
   color: ghostwhite;
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 5%;
+  padding-right: 5%;
   z-index: 9999;
+}
+
+@media (min-width: 1024px) {
+    .text-aboutme {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
 }
 
 .text-aboutme p {
@@ -106,11 +110,12 @@ body {
   line-height: 1.5rem;
   font-weight: 100;
   display: inline;
+  color: #d8d8d8;
 }
 
-.text-aboutme a {
-  color: inherit;
-  text-decoration: none;
+.text-aboutme .keyword {
+  color: white;
+  font-weight: bold;
 }
 
 ::-webkit-scrollbar {
