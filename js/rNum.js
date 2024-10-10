@@ -32,9 +32,9 @@ function createRandomNumberElement() {
 
     setTimeout(() => {
         document.body.removeChild(numberElement);
-    }, 180);
+    }, 190);
 }
 
 window.addEventListener('load', () => {
-    setInterval(createRandomNumberElement, 20);
+    setInterval(createRandomNumberElement, 15);
 });
