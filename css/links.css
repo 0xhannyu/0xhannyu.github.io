@@ -1,7 +1,4 @@
 html {
-  height: 100%;
-  backdrop-filter: blur(10px) saturate(50%);
-  box-shadow: inset 0 0 100px black;
   overflow: hidden;
 }
 
@@ -10,70 +7,22 @@ html {
   src: url(../resources/fonts/Estandar-Regular.ttf);
 }
 
+@font-face {
+  font-family: Blox;
+  src: url(../resources/fonts/Blox.ttf);
+}
+
 body {
-  background-color: #282828;
+  background-color: black;
   background-size: auto;
   z-index: -1;
   padding: 0;
   margin: 0;
   height: 100%;
   width: 100%;
-  overflow: auto;
-  -webkit-tap-highlight-color: transparent;
-}
-
-#navbar-obj {
-  width: 100%;
-  height: 5rem;
-}
-
-.mainContainer {
-  padding: 2rem;
-}
-
-.refbutton {
-  margin: auto;
-
-  max-width: 500px;
-  min-width: 100px;
-
-  padding: 15px 20px;
-  text-decoration: none;
-  
-  font-family: Estandar;
-  color: white;
-  letter-spacing: 2px;
-  font-size: medium;
-  line-height: 1.5;
-
-  display: flex;
-  justify-content: center;
-  background-color: black;
-
-  border: 1px solid whitesmoke;
-  border-radius: 30px;
-
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-
-  margin-top: 20px;
   position: relative;
-}
-
-.refbutton:hover {
-  background-color: var(--clr);
-  box-shadow: 0 0 35px var(--clr);
-  letter-spacing: 0.40rem;
-}
-
-.refbutton svg {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 20px;
-  width: 35px;
-  height: 35px;
-  -webkit-mask-size: 100%;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .flex-nav {
@@ -121,29 +70,84 @@ a:hover {
   position: absolute;
 }
 
-#discordBanner {
+.mainContainer {
+  max-width: fit-content;
+  margin-top: auto;
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.link-table {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  grid-auto-rows: minmax(100px, auto);
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+@media (max-width: 350px) {
+  .link-table {
+    grid-template-columns: repeat(1, 1fr);
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+}
+
+.link-table::-webkit-scrollbar {
+  display: none;
+}
+
+.link-button a {
+  max-width: 500px;
+  min-width: 100px;
+
+  padding: 15px 20px;
+  text-decoration: none;
+  
+  font-family: Estandar;
+  color: white;
+  letter-spacing: 2px;
+  font-size: medium;
+  line-height: 1.5;
+
   display: flex;
   justify-content: center;
-  margin-top: 30px;
-}
+  align-items: center;
+  background-color: #1e1e1e;
 
-#discordBanner img {
-  max-width: 100%;
-}
+  border: 1px solid whitesmoke;
+  border-radius: 30px;
 
-#image-containerSlide {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -9999;
-}
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 16px 0 rgba(255, 0, 0, 0.2), 0 6px 20px 0 rgba(255, 0, 0, 0.19);
 
-#imageSlide {
-  transform: none;
   position: relative;
-  max-width: 20%;
-  max-height: 35%;
+}
+
+.link-button a:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 35px #ff0000;
+}
+
+.mainContainer span {
+  font-family: Blox;
+  font-size: 1.7em;
+  color: red;
+}
+
+.random-number {
+  will-change: transform, left, top;
+  position: absolute;
+  word-wrap: break-word;
+  color: #ff0000;
+  font-weight: bold;
+  font-family: Estandar;
+  z-index: -1;
 }
 
 ::-webkit-scrollbar {
