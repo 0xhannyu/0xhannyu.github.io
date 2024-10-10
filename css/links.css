@@ -170,10 +170,9 @@ a:hover {
 }
 
 ::-webkit-scrollbar {
-  width: 7px;
-  background-color: #7777;
+  display: none;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 20px;
+  display: none;
 }
