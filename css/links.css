@@ -4,12 +4,12 @@ html {
 
 @font-face {
   font-family: Estandar;
-  src: url(Estandar-Regular.ttf);
+  src: url(../resources/fonts/Estandar-Regular.ttf);
 }
 
 @font-face {
   font-family: Blox;
-  src: url(Blox.ttf);
+  src: url(../resources/fonts/Blox.ttf);
 }
 
 body {
