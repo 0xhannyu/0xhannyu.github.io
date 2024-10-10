@@ -4,12 +4,12 @@ html {
 
 @font-face {
   font-family: Estandar;
-  src: url(../resources/fonts/Estandar-Regular.ttf);
+  src: url(Estandar-Regular.ttf);
 }
 
 @font-face {
   font-family: Blox;
-  src: url(../resources/fonts/Blox.ttf);
+  src: url(Blox.ttf);
 }
 
 body {
@@ -21,7 +21,7 @@ body {
   height: 100%;
   width: 100%;
   position: absolute;
-  overflow: hidden;
+  overflow: auto;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -140,12 +140,16 @@ a:hover {
   color: red;
 }
 
+#discordBanner img {
+  width: 300px;
+}
+
 #discordBanner {
   max-width: fit-content;
   border: 1px solid whitesmoke;
   border-radius: 25px;
   margin-inline: auto;
-  background-color: black;  
+  background-color: black;
 }
 
 @media (max-width: 400px) {
@@ -162,6 +166,7 @@ a:hover {
   font-weight: bold;
   font-family: Estandar;
   z-index: -1;
+  overflow: hidden;
 }
 
 ::-webkit-scrollbar {
