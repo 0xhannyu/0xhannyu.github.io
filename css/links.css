@@ -4,12 +4,12 @@ html {
 
 @font-face {
   font-family: Estandar;
-  src: url(../resources/fonts/Estandar-Regular.ttf);
+  src: url(Estandar-Regular.ttf);
 }
 
 @font-face {
   font-family: Blox;
-  src: url(../resources/fonts/Blox.ttf);
+  src: url(Blox.ttf);
 }
 
 body {
@@ -20,7 +20,7 @@ body {
   margin: 0;
   height: 100%;
   width: 100%;
-  position: relative;
+  position: absolute;
   overflow: hidden;
   -webkit-tap-highlight-color: transparent;
 }
@@ -112,13 +112,13 @@ a:hover {
   font-family: Estandar;
   color: white;
   letter-spacing: 2px;
-  font-size: medium;
-  line-height: 1.5;
+  font-size: 1em;
+  line-height: 1.3;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1e1e1e;
+  background-color: black;
 
   border: 1px solid whitesmoke;
   border-radius: 30px;
@@ -136,8 +136,22 @@ a:hover {
 
 .mainContainer span {
   font-family: Blox;
-  font-size: 1.7em;
+  font-size: 1.9em;
   color: red;
+}
+
+#discordBanner {
+  max-width: fit-content;
+  border: 1px solid whitesmoke;
+  border-radius: 25px;
+  margin-inline: auto;
+  background-color: black;  
+}
+
+@media (max-width: 400px) {
+  #discordBanner {
+    margin: 10%;
+  }
 }
 
 .random-number {
