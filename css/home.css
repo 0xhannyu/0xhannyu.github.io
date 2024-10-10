@@ -1,21 +1,16 @@
-html {
-  height: 100%;
-  backdrop-filter: blur(10px) saturate(50%);
-  box-shadow: inset 0 0 100px black;
-}
-
 @font-face {
   font-family: Satoshi;
-  src: url(../resources/fonts/Satoshi-Regular.ttf);
+  src: url(Satoshi-Regular.ttf);
 }
 
 body {
-  background-image: src(ripplestatic.svg);
-  background-attachment: fixed;
   background-size: auto;
   background-color: #282828;
   margin: 0;
   padding: 0;
+  height: 100%;
+  backdrop-filter: blur(10px) saturate(50%);
+  box-shadow: inset 0 0 100px black;
 }
 
 #pfp {
@@ -113,7 +108,7 @@ body {
   color: #d8d8d8;
 }
 
-.text-aboutme .keyword {
+span {
   color: white;
   font-weight: bold;
 }
