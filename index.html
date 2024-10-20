@@ -29,6 +29,13 @@
 		<br><br>
 		<p>Getting in touch with me on discord would be easier than email. If you share similar interests or would like to collaborate on a project, feel free to reach out to me.</p>
 	<script src="js/popImg.js"></script>
-	<script src="js/thename.js"></script>
+	<script>
+		const words = ['0xhannyu', '[REDACTED]', 'Hanu', 'SGFudQ==', '0xh', 'हन्नू'];
+		const thenameWordElement = document.getElementById('thename');
+		setInterval(() => {
+			const randomWord = words[Math.floor(Math.random() * words.length)];
+			thenameWordElement.innerText = randomWord;
+		}, 100);
+	</script>
 </body>
 </html>
