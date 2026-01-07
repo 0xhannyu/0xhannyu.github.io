@@ -1,40 +1,54 @@
-const items = [
-    "@e", "off", "for /f", "tk=*","%%a", "dir", "/b", 
-    "%fP%\\*.ico", "echo", "Fnd %%a", "echo Pth to", ".ico", 
-    "is:%fP%\\%%a", "[ShlCI]", ">", "%dIni%", "%iPath%", 
-    ">>", "pause", "int m(){gn(","g,S,[]{","rtn 0;", "g[S>>1]=1;", 
-    "for(int", "i=0;i<S-1;","i++){int", "a=i-1<0?","--S:i-1;", 
-    "b=i+1>S-1?0:i+1;", "g[Q(i/X+1,Y,i%X)]=","a%X)]^g[Q(b/X", 
-    "for(int", "i=0;", "putc(i%X","==0?:g[i]);", "rtn 0;", 
-    "pubKFBty(b[]","pKB)thrExc", "KF keyFct", "X509Spec", 
-    "rtn", "priv", "bool", "vfSig(pubK","b[]msg,", 
-    "SHA256/ECDSA"
-];
+const items = ["@e","for /f","tk=*","%%a","/b","%fP%\\*.ico","Fnd %%a",".ico","is:%fP%\\%%a","[ShlCI]",">","%dIni%","%iPath%",">>","int m(){","g[S>>1]=1;","for(int","i=0;i<S-1;","i++){int","a=i-1<0?","--S:i-1;","b=i+1>S-1?0:i+1;","g[Q(i/X+1,Y,i%X)]=","a%X)]^g[Q(b/X","putc(i%X","==0?:g[i]);","rtn 0;",
+"uint8_t*","volatile","(x>>3)&1","~mask","0xDEAD","0xBEEF","0xCAFEBABE","pubKFBty(b[]","thrExc","KF keyFct","X509Spec","vfSig(pubK","b[]msg,","SHA256(","ECDSA_","ASN1_","DER_seq","BN_new()","memcmp(","len>>2" ];
 
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+const weightedItems = items.flatMap(x =>
+    Array(Math.max(1, 12 - x.length)).fill(x)
+);
+
+function isInsideSafeZone(x, y) {
+    const container = document.querySelector('.link-table');
+    if (!container) return false;
+
+    const rect = container.getBoundingClientRect();
+    const padding = 120;
+
+    return (
+        x > rect.left - padding &&
+        x < rect.right + padding &&
+        y > rect.top - padding &&
+        y < rect.bottom + padding
+    );
+}
+
 function createRandomNumberElement() {
-    const index = getRandomNumber(0, items.length - 1);
-    const numberElement = document.createElement('div');
-    numberElement.className = 'random-number';
-    numberElement.innerText = items[index];
+    const index = getRandomNumber(0, weightedItems.length - 1);
+    const el = document.createElement('div');
+    el.className = 'random-number';
 
-    const x = getRandomNumber(0, window.innerWidth - 50);
-    const y = getRandomNumber(0, window.innerHeight - 50);
-    numberElement.style.left = `${x}px`;
-    numberElement.style.top = `${y}px`;
-    numberElement.style.fontSize = getRandomNumber(10, 20) + `px`;
-    numberElement.style.position = 'absolute';
+    el.innerText =
+        weightedItems[index] + (Math.random() > 0.7 ? ";" : "");
 
-    document.body.appendChild(numberElement);
+    let x, y;
+    do {
+        x = getRandomNumber(0, window.innerWidth - 50);
+        y = getRandomNumber(0, window.innerHeight - 50);
+    } while (isInsideSafeZone(x, y));
 
-    setTimeout(() => {
-        document.body.removeChild(numberElement);
-    }, 190);
+    el.style.left = `${x}px`;
+    el.style.top = `${y}px`;
+    el.style.fontSize = getRandomNumber(10, 20) + 'px';
+
+    document.body.appendChild(el);
+
+    el.addEventListener('animationend', () => {
+        el.remove();
+    });
 }
 
 window.addEventListener('load', () => {
-    setInterval(createRandomNumberElement, 15);
+    setInterval(createRandomNumberElement, 45);
 });
