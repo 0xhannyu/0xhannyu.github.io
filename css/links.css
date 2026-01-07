@@ -60,7 +60,7 @@ body {
 }
 
 a:hover {
-  transform: scale(1.2);
+  transform: scale(1.08);
   box-shadow: 0 0 35px white;
 }
 
@@ -130,7 +130,7 @@ a:hover {
 }
 
 .link-button a:hover {
-  transform: scale(1.2);
+  transform: scale(1.08);
   box-shadow: 0 0 35px #ff0000;
 }
 
@@ -159,15 +159,21 @@ a:hover {
 }
 
 .random-number {
-  will-change: transform, left, top;
   position: absolute;
-  word-wrap: break-word;
-  color: #ff0000;
-  font-weight: bold;
   font-family: Estandar;
+  font-weight: bold;
+  color: #ff0000;
+  pointer-events: none;
+  will-change: transform, left, top, opacity;
+  animation: fadeOut 1.2s linear forwards;
   z-index: -1;
-  overflow: hidden;
 }
+
+@keyframes fadeOut {
+  from { opacity: 0.6; }
+  to   { opacity: 0; }
+}
+
 
 ::-webkit-scrollbar {
   display: none;
