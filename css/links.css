@@ -25,6 +25,20 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#main-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 .flex-nav {
   display: flex;
   flex-direction: row;
@@ -166,9 +180,9 @@ a:hover {
   pointer-events: none;
   will-change: transform, left, top, opacity;
   animation: fadeOut 1.2s linear forwards;
-  z-index: -1;
-  overflow: hidden;
+  z-index: 1;
 }
+
 
 @keyframes fadeOut {
   from { opacity: 0.6; }
