@@ -80,7 +80,7 @@ html, body {
 #image-containerSlide {
   position: fixed;
   inset: 0;
-  bottom: -10%;
+  bottom: 0%;
   overflow: hidden;
   pointer-events: none;
   z-index: -9999;
