@@ -167,6 +167,7 @@ a:hover {
   will-change: transform, left, top, opacity;
   animation: fadeOut 1.2s linear forwards;
   z-index: -1;
+  overflow: hidden;
 }
 
 @keyframes fadeOut {
