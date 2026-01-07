@@ -1,25 +1,28 @@
 const image = document.getElementById('imageSlide');
 
-image.style.top = '100%';
-image.style.left = '0%';
-
 function popImage() {
+
+  image.style.display = 'block';
+
   image.animate([
-    { transform: 'translateY(0%)' },
-    { transform: 'translateY(-85%)' }
+    { transform: 'translateY(100%)' },
+    { transform: 'translateY(15%)' }
   ], {
     duration: 3000,
-    easing: 'ease-in-out'
+    easing: 'ease-in-out',
+    fill: 'forwards'
   });
 
-   setTimeout(function() {
+  setTimeout(() => {
     image.animate([
-      { transform: 'translateY(-85%)' },
-      { transform: 'translateY(0%)' }
+      { transform: 'translateY(15%)' },
+      { transform: 'translateY(100%)'}
     ], {
       duration: 2000,
-      easing: 'ease-in-out'
+      easing: 'ease-in-out',
+      fill: 'forwards'
     });
   }, 3000);
 }
-setInterval(popImage, 7000);
+
+setInterval(popImage, 5000);
