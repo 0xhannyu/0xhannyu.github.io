@@ -16,10 +16,6 @@ body {
   background-color: black;
   background-size: auto;
   z-index: -1;
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  width: 100%;
   position: absolute;
   overflow: auto;
   -webkit-tap-highlight-color: transparent;
@@ -172,16 +168,23 @@ a:hover {
   }
 }
 
+#random-number-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
 .random-number {
   position: absolute;
   font-family: Estandar;
   font-weight: bold;
   color: #ff0000;
-  pointer-events: none;
-  will-change: transform, left, top, opacity;
   animation: fadeOut 1.2s linear forwards;
-  z-index: 1;
+  will-change: transform, opacity;
 }
+
 
 
 @keyframes fadeOut {
